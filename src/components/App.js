@@ -65,7 +65,7 @@ export default function App() {
     }
 
     if (data.children.length === 0) {
-      if (style === "") {
+      if (Object.keys(data.style).length === 0) {
         return `<${data.name}/>`;
       }
       return `
@@ -73,10 +73,10 @@ export default function App() {
       `;
     } else {
       let childArray = (data.children || []).map((childData) => {
-        return jsonToJSX(childData).toString();
+        return jsonToJSX(childData);
       });
       let childString = childArray.join(" ");
-      if (style === "") {
+      if (Object.keys(data.style).length === 0) {
         return `
       <${data.name}>
         ${childString}
