@@ -84,7 +84,7 @@ export default function App() {
       `;
     }
   };
-  return `<${givenData.name}/>`
+  return "";
   // return jsonToJSX(givenData);
 }
 
