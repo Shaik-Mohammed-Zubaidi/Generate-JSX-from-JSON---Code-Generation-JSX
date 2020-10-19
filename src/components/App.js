@@ -86,8 +86,7 @@ export default function App() {
       return `
       <${data.name} ${style}>
         ${childString}
-      </${data.name}>
-      `;
+      </${data.name}>`;
     }
   };
   return jsonToJSX(givenData).toString();
