@@ -61,7 +61,7 @@ export default function App() {
         }
       }
       let propString = propArray.join(", ");
-      style = `style={{${propString}}}`;
+      style = `style={${propString}}`;
     }
 
     if (data.children.length === 0) {
