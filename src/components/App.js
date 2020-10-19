@@ -77,7 +77,7 @@ export default function App() {
       return `
       <${data.name} ${style}>
         ${childString}
-      <${data.name}/>
+      </${data.name}>
       `;
     }
   };
