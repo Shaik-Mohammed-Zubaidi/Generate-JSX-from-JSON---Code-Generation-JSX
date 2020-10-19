@@ -2,28 +2,28 @@ import React, { Component, useState } from "react";
 import "../styles/App.css";
 
 const givenData = {
-  type: "div",
-  name: "Clock",
-  root: true,
-  style: {
-    display: "flex",
+  "type": "div",
+  "name": "Clock",
+  "root": true,
+  "style": {
+    "display": "flex",
     "flex-direction": "row",
     "justify-content": "center"
   },
-  children: [
+  "children": [
     {
-      type: "div",
-      name: "Hour",
-      style: {},
-      children: [
+      "type": "div",
+      "name": "Hour",
+      "style": {},
+      "children": [
         {
-          type: "span",
-          name: "Minute",
-          style: {
-            color: "green",
+          "type": "span",
+          "name": "Minute",
+          "style": {
+            "color": "green",
             "font-size": 30
           },
-          children: []
+          "children": []
         }
       ]
     },
@@ -61,10 +61,13 @@ export default function App() {
         }
       }
       let propString = propArray.join(", ");
-      style = `style={${propString}}`;
+      style = `style={${{propString}}}`;
     }
 
     if (data.children.length === 0) {
+      if(style===""){
+        return `<${data.name}/>`
+      }
       return `
       <${data.name} ${style}/>
       `;
@@ -81,7 +84,8 @@ export default function App() {
       `;
     }
   };
-  return jsonToJSX(givenData);
+  return `<${givenData.name}/>`
+  // return jsonToJSX(givenData);
 }
 
 // class App extends Component {
